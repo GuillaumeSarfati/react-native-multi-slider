@@ -28,6 +28,7 @@ export default class MultiSlider extends React.Component {
       borderRadius: 15,
       slipDisplacement: 200,
     },
+    customTrack: View,
     customMarker: DefaultMarker,
     customMarkerLeft: DefaultMarker,
     customMarkerRight: DefaultMarker,
@@ -342,7 +343,7 @@ export default class MultiSlider extends React.Component {
       ? selectedStyle || styles.selectedTrack
       : unselectedStyle;
     const Marker = this.props.customMarker;
-
+    const Track = this.props.customTrack;
     const MarkerLeft = this.props.customMarkerLeft;
     const MarkerRight = this.props.customMarkerRight;
     const isMarkersSeparated = this.props.isMarkersSeparated || false;
@@ -395,7 +396,7 @@ export default class MultiSlider extends React.Component {
             ]}
           />
           {twoMarkers && (
-            <View
+            <Track
               style={[
                 styles.track,
                 this.props.trackStyle,
